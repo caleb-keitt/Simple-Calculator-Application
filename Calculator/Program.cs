@@ -5,44 +5,32 @@ namespace Calculator
 {
     class Program
     {
-       
-        static void Main(string[] args){
-            
-            /// Example to get you started,
-            /// Remove the following code below after you run the app to ensure it works.
-            
-            int a = 49;
-            int b = 22;
-            int c = a + b;
-            Console.WriteLine(c);
-            Console.ReadKey();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the first number you want to add.");
+            string response = Console.ReadLine();
 
+            int number1;
+            if (!int.TryParse(response, out number1))
+            {
+                Console.WriteLine("Invalid Number!");
+                Console.ReadLine();
+                return;
+            }
 
-            //Display title as the Calculator App.
+            Console.WriteLine("Enter the second number you want to add.");
+            response = Console.ReadLine();
 
-            //Declare 3 variables and set to empty.
+            int number2;
+            if (!int.TryParse(response, out number2))
+            {
+                Console.WriteLine("Invalid Number!");
+                Console.ReadLine();
+                return;
+            }
 
-            //*Hint* numInput1= ; numInput2= ; result = ;
-            //String numbInput1 = "";
-
-
-
-            //Ask the user to type the first number
-
-            //*Hint*
-            //Console.WriteLine("Type a number, and then press Enter: ");
-            //inputNumb1 = Console.ReadLine();
-
-
-            //Ask the user to type the second number.
-            //Ask the user to the user to choose an operator.
-            //If a non-numeric is entered add try/catch block to handle the exception.
-            //Use a switch statement to do the calculations
-            //Wait for the user to respond before closing.
-
-
+            int total = number1 + number2;
+            Console.WriteLine("The sum of " + number1 + " and " + number2 + " is " + (number1 + number2));
         }
-
-
     }
 }
